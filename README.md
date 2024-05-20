@@ -1,18 +1,18 @@
 # full-house-update
 update era-adjusted statistics with a new season
 
-## data update
+# data update
 update batters' statistics, pitchers' statistics, and players' bio-information statistics
 
-### update batters' statistics
+# Setup
+The version of Chromedrive is 125.0.6422.60, if the version on your end is not this one, please visit https://developer.chrome.com/docs/chromedriver/downloads/version-selection and download the correct version. 
 
-#### source 1: baseball-reference
-"https://www.baseball-reference.com/leagues/majors/2023-standard-batting.shtml"
-for batting average, home runs, etc
+# Fangraphs data
+I am working on the codes to scrape the Fangraphs data by entering the username and password. 
+Currently, please download the datasets by using the link in full_house_update.R
 
-"https://www.baseball-reference.com/data/war_daily_bat.txt"
-for bWAR
+# Lahman package
+This package is not up to date and only contains the date before 2021. 
 
-#### source 2: FanGraphs:
-https://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=nl&qual=0&type=c,7,13,59&season=2023&month=0&season1=2023&ind=0&team=0&rost=0&age=0&filter=&players=0&startdate=&enddate="
-
+# functions.R
+It contains all the required functions in full_house_update.R. 
