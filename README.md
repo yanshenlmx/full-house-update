@@ -2,7 +2,7 @@
 update era-adjusted statistics with a new season
 
 # data update
-update batters' statistics, pitchers' statistics, and players' bio-information statistics
+update batters' statistics(full_house_update.R), pitchers' statistics(full_house_update.R), and players' bio-information statistics(bio-info.R). 
 
 # Setup
 The version of Chromedrive is 125.0.6422.60, if the version on your end is not this one, please visit https://developer.chrome.com/docs/chromedriver/downloads/version-selection and download the correct version. 
