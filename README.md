@@ -7,6 +7,8 @@ update batters' statistics, pitchers' statistics, and players' bio-information s
 # Setup
 The version of Chromedrive is 125.0.6422.60, if the version on your end is not this one, please visit https://developer.chrome.com/docs/chromedriver/downloads/version-selection and download the correct version. 
 
+Change the directory of Chromedrive in the scraping.py. 
+
 # Fangraphs data
 I am working on the codes to scrape the Fangraphs data by entering the username and password. 
 Currently, please download the datasets by using the link in full_house_update.R
