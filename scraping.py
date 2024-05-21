@@ -26,7 +26,7 @@ def clean_crude(csv):
     return season_data
 
 def raw_bbref_pit(year):
-    chromedriver = "/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver"
+    chromedriver = "/Users/yanshen/Documents/GitHub/full-house-update/chromedriver"
     #os.environ["webdriver.chrome.driver"] = chromedriver
     driver = webdriver.Chrome(chromedriver)
     #cService = webdriver.ChromeService(executable_path='/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver')
@@ -51,7 +51,7 @@ def raw_bbref_pit(year):
     return clean
 
 def raw_bbref_bat(year):
-    chromedriver = "/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver"
+    chromedriver = "/Users/yanshen/Documents/GitHub/full-house-update/chromedriver"
     #os.environ["webdriver.chrome.driver"] = chromedriver
     driver = webdriver.Chrome(chromedriver)
     #cService = webdriver.ChromeService(executable_path='/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver')
@@ -77,11 +77,11 @@ def raw_bbref_bat(year):
 
 def raw_fgraphs_pit_nl(year):
     ## Initialising the chrome webdriver
-    #chromedriver = "/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver"
+    chromedriver = "/Users/yanshen/Documents/GitHub/full-house-update/chromedriver"
     #os.environ["webdriver.chrome.driver"] = chromedriver
-    #driver = webdriver.Chrome(chromedriver)
-    cService = webdriver.ChromeService(executable_path='/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver')
-    driver = webdriver.Chrome(service = cService)
+    driver = webdriver.Chrome(chromedriver)
+    #cService = webdriver.ChromeService(executable_path='/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver')
+    #driver = webdriver.Chrome(service = cService)
     
     ## Attaching the yeear number in the url to pull the required url
     url = "https://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=nl&qual=0&type=c,7,13,59&season="+str(year)+"&month=0&season1="+str(year)+"&ind=0&team=0&rost=0&age=0&filter=&players=0&startdate=&enddate="
@@ -113,11 +113,11 @@ def raw_fgraphs_pit_nl(year):
 
 def raw_fgraphs_pit_al(year):
     ## Initialising the chrome webdriver
-    #chromedriver = "/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver"
+    chromedriver = "/Users/yanshen/Documents/GitHub/full-house-update/chromedriver"
     #os.environ["webdriver.chrome.driver"] = chromedriver
-    #driver = webdriver.Chrome(chromedriver)
-    cService = webdriver.ChromeService(executable_path='/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver')
-    driver = webdriver.Chrome(service = cService)
+    driver = webdriver.Chrome(chromedriver)
+    #cService = webdriver.ChromeService(executable_path='/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver')
+    #driver = webdriver.Chrome(service = cService)
     
     ## Attaching the yeear number in the url to pull the required url
     url = "https://www.fangraphs.com/leaders.aspx?pos=all&stats=pit&lg=al&qual=0&type=c,7,13,59&season="+str(year)+"&month=0&season1="+str(year)+"&ind=0&team=0&rost=0&age=0&filter=&players=0&startdate=&enddate="
@@ -149,11 +149,11 @@ def raw_fgraphs_pit_al(year):
 
 def raw_fgraphs_bat_al(year):
     ## Initialising the chrome webdriver
-    #chromedriver = "/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver"
+    chromedriver = "/Users/yanshen/Documents/GitHub/full-house-update/chromedriver"
     #os.environ["webdriver.chrome.driver"] = chromedriver
-    #driver = webdriver.Chrome(chromedriver)
-    cService = webdriver.ChromeService(executable_path='/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver')
-    driver = webdriver.Chrome(service = cService)
+    driver = webdriver.Chrome(chromedriver)
+    #cService = webdriver.ChromeService(executable_path='/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver')
+    #driver = webdriver.Chrome(service = cService)
     
     ## Attaching the yeear number in the url to pull the required url
     url = "https://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=al&qual=0&type=c,4,5,6,58&season="+str(year)+"&month=0&season1="+str(year)+"&ind=0&team=0&rost=0&age=0&filter=&players=0&startdate=&enddate="
@@ -185,11 +185,11 @@ def raw_fgraphs_bat_al(year):
 
 def raw_fgraphs_bat_nl(year):
     ## Initialising the chrome webdriver
-    #chromedriver = "/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver"
+    chromedriver = "/Users/yanshen/Documents/GitHub/full-house-update/chromedriver"
     #os.environ["webdriver.chrome.driver"] = chromedriver
-    #driver = webdriver.Chrome(chromedriver)
-    cService = webdriver.ChromeService(executable_path='/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver')
-    driver = webdriver.Chrome(service = cService)
+    driver = webdriver.Chrome(chromedriver)
+    #cService = webdriver.ChromeService(executable_path='/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver')
+    #driver = webdriver.Chrome(service = cService)
     
     ## Attaching the yeear number in the url to pull the required url
     url = "https://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=nl&qual=0&type=c,4,5,6,58&season="+str(year)+"&month=0&season1="+str(year)+"&ind=0&team=0&rost=0&age=0&filter=&players=0&startdate=&enddate="
@@ -219,6 +219,25 @@ def raw_fgraphs_bat_nl(year):
     ## Moving the file from downloads folder to the Project Folder
     ##shutil.move('/Users/shenyan/Downloads/FanGraphs Leaderboard.csv','/Users/shenyan/Desktop/expansion/batting'+str(year)+'_f_NL.csv')
 
-
+def raw_bioinfo(playerid):
+    chromedriver = "/Users/yanshen/Documents/GitHub/full-house-update/chromedriver"
+    #os.environ["webdriver.chrome.driver"] = chromedriver
+    driver = webdriver.Chrome(chromedriver)
+    #cService = webdriver.ChromeService(executable_path='/Users/yanshen/Desktop/PhD_UIUC/pythonlearning/chromedriver')
+    #driver = webdriver.Chrome(service = cService)
+    
+    ## Attaching the yeear number in the url to pull the required url
+    url = "https://www.baseball-reference.com/players/"+str(playerid[0])+"/"+str(playerid)+".shtml" 
+    driver = webdriver.Chrome(chromedriver) 
+    driver.get(url) 
+    time.sleep(5) 
+    soup = BeautifulSoup(driver.page_source, 'html.parser') 
+    crude = soup.find(id = 'meta').text.split("\n") 
+    while("" in crude): 
+      crude.remove("") 
+    crude.append(playerid) 
+    df = pd.DataFrame(crude) 
+    
+    return df
 
 
