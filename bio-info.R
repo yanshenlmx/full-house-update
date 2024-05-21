@@ -15,7 +15,7 @@ years <- 1871:new_season
 library(reticulate)
 reticulate::py_config()
 ## copy the python directory and paste into here
-use_python("/Users/yanshen/Library/r-miniconda/envs/r-reticulate/bin/python", required = TRUE)
+use_python("/Users/danieleck/.virtualenvs/r-reticulate/bin/python", required = TRUE)
 
 py_install("bs4")
 py_install("requests")
@@ -24,6 +24,7 @@ py_install("Send2Trash")
 py_install("pandas")
 
 source_python('scraping.py')
+
 
 ## new season
 new_season <- 2024L
