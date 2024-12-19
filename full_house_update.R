@@ -12,6 +12,7 @@ py_install("selenium")
 py_install("Send2Trash")
 py_install("pandas")
 
+## fix local path to scraping.py on your computer
 source_python('scraping.py')
 
 ## new season
@@ -431,14 +432,15 @@ library(splines)
 library(retrosheet)
 library(kableExtra)
 library(Lahman)
+## fix local path to functions.R on your computer
 source('functions.R')
 
 ## detect the number of CPU cores
 ncores <- detectCores() - 1
 
 ## specify season span
-years <- 1871:2023
-#years <- 1871:new_season
+#years <- 1871:2023
+years <- 1871:new_season
 
 ###### 
 ## bWAR for batters
