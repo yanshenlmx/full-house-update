@@ -919,6 +919,30 @@ bat_season_nonpara <- bat_season %>% mutate(H = ceiling(AB * BA)) %>%
   mutate(OBP = round((H+BB+HBP)/(AB+BB+HBP+SF), 3)) %>%
   mutate(OBP = ifelse(AB+BB+HBP+SF == 0, 0, OBP))
 
+### smooth home run counts for dead ball era players using loess 
+### (new implementation)
+
+foo = bat_season_nonpara %>% 
+  mutate(HRpAB = ifelse(AB == 0, 0, HR/AB)) %>% 
+  group_by(playerID) %>% 
+  mutate(is_dead_ball = as.numeric(any(year < 1920))) %>% 
+  mutate(n_obs = n(), 
+         HR_smooth = ifelse(is_dead_ball == 1 & n_obs > 2, predict(loess(HRpAB ~ year, span = 0.5)), HRpAB) * AB) %>% 
+  mutate(HR_smooth = ifelse(HR_smooth < 0, 0, HR_smooth)) %>% 
+  ungroup()
+
+bar = foo %>% 
+  mutate(HR_smooth = ifelse(is.na(HR_smooth), HR, HR_smooth)) %>% 
+  mutate(HR_final = sum(HR)/sum(HR_smooth) * HR_smooth)
+
+bat_season_nonpara = bar %>% 
+  mutate(HR = round(HR_final)) %>% 
+  select(-HRpAB, -n_obs, -HR_smooth, -HR_final, -is_dead_ball)
+
+
+
+  
+
 bat_career_nonpara <- bat_season_nonpara %>% group_by(playerID) %>% 
   summarise(name = unique(name), 
             playerID = unique(playerID), 
@@ -937,6 +961,7 @@ bat_career_nonpara <- bat_season_nonpara %>% group_by(playerID) %>%
 
 bat_career_nonpara <- bat_career_nonpara %>% mutate(BA = ifelse(AB == 0, 0, BA))
 bat_career_nonpara <- bat_career_nonpara %>% mutate(OBP = ifelse(AB + BB + HBP + SF == 0, 0, OBP))
+
 
 ######
 
